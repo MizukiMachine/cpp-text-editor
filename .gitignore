@@ -1,0 +1,20 @@
+# Build directories
+build/
+bin/
+obj/
+
+# IDE specific files
+.vscode/
+.vs/
+*.user
+*.suo
+
+# Compiled files
+*.exe
+*.obj
+*.dll
+*.pdb
+
+# OS specific
+.DS_Store
+Thumbs.db
