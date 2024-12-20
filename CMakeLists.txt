@@ -1,4 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
+
+# vcpkgのツールチェーンファイルを設定
+set(CMAKE_TOOLCHAIN_FILE "C:/dev/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+
 project(SimpleTextEditor)
 
 # C++17を使用
