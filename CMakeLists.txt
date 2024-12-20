@@ -18,8 +18,12 @@ set(SOURCES
     src/main.cpp
 )
 
-# 実行ファイルの生成
-add_executable(SimpleTextEditor ${SOURCES})
+# Windowsの場合、WinMainエントリーポイントを使用
+if(WIN32)
+    add_executable(SimpleTextEditor WIN32 ${SOURCES})
+else()
+    add_executable(SimpleTextEditor ${SOURCES})
+endif()
 
 # wxWidgetsをリンク
 target_link_libraries(SimpleTextEditor PRIVATE ${wxWidgets_LIBRARIES})
