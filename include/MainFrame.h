@@ -19,6 +19,14 @@ private:
     void OnSave(wxCommandEvent& event);
     void OnExit(wxCommandEvent& event);
     
+    // 編集機能のイベントハンドラ
+    void OnUndo(wxCommandEvent& event);
+    void OnRedo(wxCommandEvent& event);
+    void OnCut(wxCommandEvent& event);
+    void OnCopy(wxCommandEvent& event);
+    void OnPaste(wxCommandEvent& event);
+    void OnSelectAll(wxCommandEvent& event);
+    
     // ファイル操作メソッド
     bool SaveFile(const wxString& filepath);
     bool LoadFile(const wxString& filepath);
