@@ -121,6 +121,51 @@ bool MainFrame::SaveFile(const wxString& filepath)
     return true;
 }
 
+void MainFrame::OnUndo(wxCommandEvent& event)
+{
+    if (textCtrl->CanUndo())
+    {
+        textCtrl->Undo();
+        SetStatusText("Undo");
+    }
+}
+
+void MainFrame::OnRedo(wxCommandEvent& event)
+{
+    if (textCtrl->CanRedo())
+    {
+        textCtrl->Redo();
+        SetStatusText("Redo");
+    }
+}
+
+void MainFrame::OnCut(wxCommandEvent& event)
+{
+    textCtrl->Cut();
+    SetStatusText("Cut");
+}
+
+void MainFrame::OnCopy(wxCommandEvent& event)
+{
+    textCtrl->Copy();
+    SetStatusText("Copy");
+}
+
+void MainFrame::OnPaste(wxCommandEvent& event)
+{
+    if (textCtrl->CanPaste())
+    {
+        textCtrl->Paste();
+        SetStatusText("Paste");
+    }
+}
+
+void MainFrame::OnSelectAll(wxCommandEvent& event)
+{
+    textCtrl->SelectAll();
+    SetStatusText("Select All");
+}
+
 bool MainFrame::LoadFile(const wxString& filepath)
 {
     if (!textCtrl->LoadFile(filepath))
