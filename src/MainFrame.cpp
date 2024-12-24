@@ -30,6 +30,19 @@ MainFrame::MainFrame()
     fileMenu->AppendSeparator();
     fileMenu->Append(wxID_EXIT, "E&xit\tAlt+F4");
     menuBar->Append(fileMenu, "&File");
+
+    // 編集メニューの作成
+    wxMenu *editMenu = new wxMenu();
+    editMenu->Append(wxID_UNDO, "&Undo\tCtrl+Z");
+    editMenu->Append(wxID_REDO, "&Redo\tCtrl+Y");
+    editMenu->AppendSeparator();
+    editMenu->Append(wxID_CUT, "Cu&t\tCtrl+X");
+    editMenu->Append(wxID_COPY, "&Copy\tCtrl+C");
+    editMenu->Append(wxID_PASTE, "&Paste\tCtrl+V");
+    editMenu->AppendSeparator();
+    editMenu->Append(wxID_SELECTALL, "Select &All\tCtrl+A");
+    
+    menuBar->Append(editMenu, "&Edit");
     SetMenuBar(menuBar);
 
     // テキストコントロールの作成
