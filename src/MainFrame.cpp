@@ -3,10 +3,18 @@
 #include <wx/msgdlg.h>
 
 wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
+    // ファイルメニュー
     EVT_MENU(wxID_NEW, MainFrame::OnNew)
     EVT_MENU(wxID_OPEN, MainFrame::OnOpen)
     EVT_MENU(wxID_SAVE, MainFrame::OnSave)
     EVT_MENU(wxID_EXIT, MainFrame::OnExit)
+    // 編集メニュー
+    EVT_MENU(wxID_UNDO, MainFrame::OnUndo)
+    EVT_MENU(wxID_REDO, MainFrame::OnRedo)
+    EVT_MENU(wxID_CUT, MainFrame::OnCut)
+    EVT_MENU(wxID_COPY, MainFrame::OnCopy)
+    EVT_MENU(wxID_PASTE, MainFrame::OnPaste)
+    EVT_MENU(wxID_SELECTALL, MainFrame::OnSelectAll)
 wxEND_EVENT_TABLE()
 
 MainFrame::MainFrame() 
