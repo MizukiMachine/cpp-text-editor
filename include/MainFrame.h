@@ -27,6 +27,20 @@ private:
     void OnPaste(wxCommandEvent& event);
     void OnSelectAll(wxCommandEvent& event);
     
+    // 検索・置換機能のイベントハンドラ
+    void OnFind(wxCommandEvent& event);
+    void OnReplace(wxCommandEvent& event);
+    void OnFindNext(wxCommandEvent& event);
+    
+    // 検索関連の補助メソッド
+    bool DoFind(const wxString& text, bool forward = true, bool matchCase = false);
+    bool DoReplace(const wxString& findText, const wxString& replaceText, 
+                  bool matchCase = false);
+    
+    // メンバ変数
+    wxString lastFindText;    // 最後に検索した文字列
+    long lastFindPosition;    // 最後に検索した位置
+    
     // ファイル操作メソッド
     bool SaveFile(const wxString& filepath);
     bool LoadFile(const wxString& filepath);
