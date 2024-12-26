@@ -15,6 +15,10 @@ wxBEGIN_EVENT_TABLE(MainFrame, wxFrame)
     EVT_MENU(wxID_COPY, MainFrame::OnCopy)
     EVT_MENU(wxID_PASTE, MainFrame::OnPaste)
     EVT_MENU(wxID_SELECTALL, MainFrame::OnSelectAll)
+    // 検索・置換メニュー
+    EVT_MENU(wxID_FIND, MainFrame::OnFind)
+    EVT_MENU(wxID_REPLACE, MainFrame::OnReplace)
+    EVT_MENU(wxID_FORWARD, MainFrame::OnFindNext)
 wxEND_EVENT_TABLE()
 
 MainFrame::MainFrame() 
